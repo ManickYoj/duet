@@ -17,6 +17,10 @@
   ],
   "author": "Nick Francisci",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManickYoj/duet"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
@@ -31,10 +35,7 @@
     "pg": "^6.2.3"
   },
   "devDependencies": {
-    "chai": "^4.0.1",
-    "chai-http": "^3.0.0",
     "eslint": "^3.19.0",
-    "eslint-plugin-react": "^7.0.1",
-    "mocha": "^3.4.2"
+    "eslint-plugin-react": "^7.0.1"
   }
 }
