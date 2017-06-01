@@ -1,0 +1,40 @@
+{
+  "name": "duet",
+  "version": "0.0.1",
+  "description": "A to-do app",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha",
+    "start": "node server.js",
+    "db-reset": "knex migrate:rollback --knexfile database/knexfile.js && knex migrate:latest --knexfile database/knexfile.js"
+  },
+  "keywords": [
+    "todo",
+    "express",
+    "nick",
+    "francisci",
+    "manickyoj"
+  ],
+  "author": "Nick Francisci",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.2.3"
+  },
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "mocha": "^3.4.2"
+  }
+}
