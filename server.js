@@ -10,6 +10,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const flash = require('connect-flash');
+const path = require('path');
 
 // -- Load internal modules
 const passport = require('./server/passport');
@@ -37,13 +38,14 @@ app.use(session({               // Session persistence middleware
 app.use(passport.initialize()); // Authentication middleware
 app.use(passport.session());    // Handle persistence with sessions
 app.use(flash());               // Store flash messages in session
+app.use(express.static('public'));  // Serve public folder files
 app.use(routes);
 
 
 // -- Routes
 // Get public login page
 app.get('/', (req, res) => {
-  res.send('Duet index route (Not yet built).');
+  res.sendFile(path.resolve(__dirname, 'client/index.html'));
 });
 
 // -- Execute migrations

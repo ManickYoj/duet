@@ -1,0 +1,80 @@
+.single-page {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.cont-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cont-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+html {
+  font-family: monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+#login-window {
+  background-color: #999;
+  padding: 1em;
+  color: white;
+}
+
+#todo-window {
+  max-width: 1024px;
+  width: 768px;
+
+}
+
+button, input[type="submit"] {
+  text-decoration: clear;
+  background: none;
+  background-color: teal;
+  border: none;
+  color: white;
+  margin-top: 0.6em;
+  padding: 0.6em;
+  width: 100%;
+  font-family: inherit;
+}
+
+input[type="password"], input[type="text"] {
+  text-decoration: clear;
+  background: white;
+  border: none;
+  margin-top: 0.6em;
+  font-family: inherit;
+  padding: 0.5em;
+}
+
+.todo-title {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.todo-tag {
+  margin-right: 1em;
+}

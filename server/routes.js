@@ -11,8 +11,10 @@ router.post('/auth/register', (req, res, next) => {
 
   return auth.createUser(username, password)
   .then((userdata) => {
-    passport.authenticate('local', (err, user) => {
-      if (user) res.status(200).json({status: 'success'});
+    passport.authenticate('local', {
+      successRedirect: '/app',
+      failureRedirect: '/',
+      failureFlash: true,
     })(req, res, next);
   })
   .catch((err) => {

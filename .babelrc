@@ -1,0 +1,13 @@
+/*
+Babel Configuration
+---
+Sets up babel to load transformations it can apply to
+transpile javascript modules.
+*/
+
+{
+  "presets": [
+    "es2015",
+    "react",
+  ]
+}
