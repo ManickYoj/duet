@@ -1,0 +1,16 @@
+/* ----- Classes ----- */
+.todo-title {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.todo-tag {
+  margin-right: 1em;
+}
+
+
+/* ----- IDs ----- */
+#todo-window {
+  max-width: 1024px;
+  width: 768px;
+}

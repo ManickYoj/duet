@@ -14,7 +14,8 @@ const path = require('path');
 
 // -- Load internal modules
 const passport = require('./server/passport');
-const routes = require('./server/routes');
+const publicRoutes = require('./server/publicRoutes');
+const privateRoutes = require('./server/privateRoutes');
 const db = require('./database/database');
 
 // -- Load configuration
@@ -39,14 +40,12 @@ app.use(passport.initialize()); // Authentication middleware
 app.use(passport.session());    // Handle persistence with sessions
 app.use(flash());               // Store flash messages in session
 app.use(express.static('public'));  // Serve public folder files
-app.use(routes);
 
 
 // -- Routes
 // Get public login page
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client/index.html'));
-});
+app.use(publicRoutes);
+app.use(privateRoutes);
 
 // -- Execute migrations
 db.migrate.latest()

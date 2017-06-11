@@ -1,9 +1,18 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 
 const passport = require('./passport');
 const auth = require('./auth');
 
+router.get('/', (req, res) => {
+  if (req.isAuthenticated()) res.redirect('/app');
+  else res.redirect('/login');
+});
+
+router.get('/login', (req, res)=> {
+  res.sendFile(path.resolve(__dirname, '../client/login.html'));
+});
 
 // Create a new user
 router.post('/auth/register', (req, res, next) => {
@@ -19,6 +28,7 @@ router.post('/auth/register', (req, res, next) => {
   })
   .catch((err) => {
     res.status(500).json({status: 'error'});
+    console.error(err);
   });
 
 });

@@ -13,9 +13,10 @@ const path = require('path');
 const ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
-  entry: [
-    path.resolve(ROOT_PATH, 'client/index.jsx'),
-  ],
+  entry: {
+    app: path.resolve(ROOT_PATH, 'client/app.jsx'),
+    login: path.resolve(ROOT_PATH, 'client/login.jsx'),
+  },
   module: {
     loaders:[
       // Load .jsx files with Babel
@@ -32,7 +33,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(ROOT_PATH, './public/build'),
-    filename: 'bundle.js',
+    filename: '[name]-bundle.js',
   },
   devServer: {
     contentBase: path.resolve(ROOT_PATH, './public'),
