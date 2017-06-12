@@ -11,9 +11,13 @@ exports.up = function(knex, Promise) {
     }),
 
     knex.schema.createTable('todos', (table) => {
-      table.string('name');
+      table.increments('id');
+      table.integer('owner').unsigned().references('id').inTable('users').notNullable();
+      table.string('name').notNullable();
       table.dateTime('deadline');
-      table.time('estimated-duration');
+      table.integer('estimatedDuration');
+
+      table.timestamps();
     }),
 
   ]);
@@ -21,9 +25,7 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-
-    knex.schema.dropTable('users'),
     knex.schema.dropTable('todos'),
-
+    knex.schema.dropTable('users'),
   ]);
 };

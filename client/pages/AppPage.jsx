@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Todo from '../components/Todo';
-import axios from 'axios';
+import TodoListContainer from '../containers/TodoList';
 
 class AppPage extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
+    const { addTodo } = this.props;
     const name = "Nick Francisci";
 
     return (
@@ -25,20 +24,11 @@ class AppPage extends React.Component {
             <div>*Progress Wheel*</div>
           </div>
 
-          <div>
-            <button>+ New Task</button>
-            <ul>
-              <Todo title={"Test"} tags={["foo", "bar"]} completed={false}/>
-            </ul>
-          </div>          
+          <TodoListContainer />
         </div>
       </div>
     )
   }
-}
-
-AppPage.propTypes = {
-  createNewTask: PropTypes.func, // Should be required
 }
 
 export default AppPage;

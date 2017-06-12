@@ -9,7 +9,6 @@ class LoginPage extends React.Component {
       username: '',
       password: '',
     };
-
   }
 
   onChange(e, key) {
